@@ -1,6 +1,6 @@
 @echo off
 rem frrd.cmd - Find Remote Repo (Debug)
-rem utility to look up an existing remote repo
+rem Utility to look up an existing remote repo, with copious debugging output.
 
 rem TODO: Is there some way to use %0 instead of frrd, where backslashes (and
 rem       other specially treated characters) are quoted for both the client
