@@ -47,4 +47,5 @@ easy way to cache SSH keys on Windows.)
 - I think quoting can be improved. See the "TODO" comment in `frr.cmd`.
 
 - It might be better to store the domain name of the server in the Windows
-registry, or to fall back to accessing the registry if `%USERPROFILE%\`
+registry, or to fall back to accessing the registry if
+`%USERPROFILE%\.nrr-frr-server` is not found.
