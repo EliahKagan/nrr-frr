@@ -3,6 +3,7 @@
         "USERPROFILE",
         "findrepo",
         "frrd",
-        "newrepo"
+        "newrepo",
+        "repo"
     ]
 }
