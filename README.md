@@ -14,7 +14,7 @@ variable.
 `.nrr-frr-server` consisting of a single line with the hostname or IP address
 of the server you want the scripts to run `newrepo` and `findrepo` on.
 
-    This shouldn't be a full URL, just a hostanme or IP address. For example:
+    This shouldn't be a full URL, just a hostname or IP address. For example:
 
     ```none
     www.example.com
