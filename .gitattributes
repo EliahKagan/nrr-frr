@@ -1,4 +1,16 @@
 # .gitattributes - Picky line endings.
+#
+# This file is part of nrr-frr, client scripts for newrepo/findrepo.
+#
+# Written in 2019 by Eliah Kagan <degeneracypressure@gmail.com>.
+#
+# To the extent possible under law, the author(s) have dedicated all copyright
+# and related and neighboring rights to this software to the public domain
+# worldwide. This software is distributed without any warranty.
+#
+# You should have received a copy of the CC0 Public Domain Dedication along
+# with this software. If not, see
+# <http://creativecommons.org/publicdomain/zero/1.0/>.
 
 # Files without dots are shell scripts. They need LF line endings.
 * text eol=lf
@@ -8,3 +20,7 @@
 
 # Except Windows command files. They (like batch files) need CRLF line endings.
 *.cmd text eol=crlf
+
+# The files containing copies of CC0 are normal text files too.
+COPYING text eol=auto
+LICENSE text eol=auto
