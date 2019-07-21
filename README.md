@@ -1,9 +1,27 @@
 # nrr-frr - client scripts for newrepo/findrepo
 
-`nrr.cmd`, `frr.cmd`, and `frrd.cmd` are Windows utilities. They run `newrepo`
-and `findrepo` on a server.
+The `nrr`, `frr`, and `frrd` commands run on a client machine. They connect to
+a server, where they run `newrepo` (`nrr`) or `findrepo` (`frr` and `frrd`).
 
-### Installation
+The files `nrr`, `frr`, and `frrd` provide those commands for Unix-like
+environments, while `nrr.cmd`, `frr.cmd`, and `frrd.cmd` provide them on
+Windows.
+
+### Installation on Unix-like operating systems
+
+1. Run `./deploy`.
+
+2. Make a file in your home directory (i.e., in `$HOME`) called `.nrr-frr-server`
+consisting of a single line with the hostname or IP address of the server you
+want the scripts to run `newrepo` and `findrepo` on.
+
+    This shouldn't be a full URL, just a hostname or IP address. For example:
+
+    ```none
+    www.example.com
+    ```
+
+### Installation on Windows
 
 To install these scripts:
 
@@ -22,30 +40,35 @@ of the server you want the scripts to run `newrepo` and `findrepo` on.
 
 ### What Each Command Does
 
-Running `nrr RepoName` makes a remote repo `RepoName.git`.
+`nrr` stands for "new remote repo." Running `nrr RepoName` makes a remote repo `RepoName.git`.
 
-Running `frr RepoName` gives the URL of the repo of that name, or suggests
-similar repo names if there is no repo by that name.
+`frr` stands for "find remote repo." Running `frr RepoName` gives the URL of
+the repo of that name, or suggests similar repo names if there is no repo by
+that name.
 
-`frrd` is like `frr`, except that you get lots of internal information about
-how the guessing algorithm (for names that are not found) works, which you
-likely only want if you are debugging findrepo (the `frr` backend) or are just
-curious.
-
-### Rationale
-
-On Unix-like systems, `ssh SERVER newrepo REPO` and `ssh SERVER findrepo REPO`
-are usually sufficient, so I haven't gotten around to writing corresponding
-shell scripts, though I probably should. On Windows, it's more important to use
-`GIT_SSH`, because it may be set to `plink` or a command that runs `plink` with
-options, and `plink` uses Pageant for SSH key management. (This is often the
-*reason* Windows users use `plink` for Git; traditionally, Pageant is the
-easy way to cache SSH keys on Windows.)
+`frrd` stands for "find remote repo (debug)." `frrd` is like `frr`, except that
+you get lots of internal information about how the guessing algorithm (for
+names that are not found) works, which you likely only want if you are
+debugging findrepo (the `frr` backend) or are just curious.
 
 ### Known Bugs
 
-- I think quoting can be improved. See the "TODO" comment in `frr.cmd`.
+- The `.cmd` files (for Windows) require `%GIT_SSH%` to be set. They don't fall
+back to `ssh` when `%GIT_SSH%` expands to an empty string. This is in
+undesirable contrast to the shell scripts (for Unix-like systems), which do use
+`ssh` when `$GIT_SSH` expands to an empty string.
 
-- It might be better to store the domain name of the server in the Windows
-registry, or to fall back to accessing the registry if
-`%USERPROFILE%\.nrr-frr-server` is not found.
+- I think quoting can be improved in the `.cmd` files.
+
+    I think there may be a way to use `%0` instead of `frr`, where backslashes
+    and other special characters are quoted for both the client shell (that
+    runs this script) and the server shell (that SSH runs). This would
+    correspond to the behavior of the shell scripts.
+
+- The name nrr-frr is clunky, though newrepo-findrepo is even worse. I'm
+holding off on changing either to anything nicer until I decide if
+newrepo-findrepo and nrr-frr should continue to be developed in separate
+repositories or joined.
+
+    (Note that this is not about the command names, which are fine, but just
+    about the names of the projects/repositories.)
