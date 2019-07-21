@@ -1,5 +1,5 @@
 @echo off
-rem frr.cmd - Find Remote Repo
+rem frr.cmd - Find Remote Repo (for Windows)
 rem Utility to look up an existing remote repo.
 
 set /p server=<%USERPROFILE%\.nrr-frr-server

@@ -1,0 +1,12 @@
+#!/bin/sh
+# nrr - Find Remote Repo - Utility to look up an existing remote repo.
+
+set -ef
+server="$(cat ~/.nrr-frr-server)"
+test -n "$server"
+
+name="$(basename "$0")"
+test -n "$name"
+
+frontend_v="FINDREPO_REMOTE_FRONTEND_COMMAND_NAME=$name"
+exec "${GIT_SSH:-ssh}" "$server" env "$frontend_v" findrepo "$@"

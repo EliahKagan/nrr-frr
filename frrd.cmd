@@ -1,5 +1,5 @@
 @echo off
-rem frrd.cmd - Find Remote Repo (Debug)
+rem frrd.cmd - Find Remote Repo Debug (for Windows)
 rem Utility to look up an existing remote repo, with copious debugging output.
 
 set /p server=<%USERPROFILE%\.nrr-frr-server

@@ -1,0 +1,8 @@
+#!/bin/sh
+# nrr - New Remote Repo - Utility to create a new remote repo.
+
+set -ef
+server="$(cat ~/.nrr-frr-server)"
+test -n "$server"
+
+exec "${GIT_SSH:-ssh}" "$server" newrepo "$@"

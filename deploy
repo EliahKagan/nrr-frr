@@ -1,0 +1,4 @@
+#!/bin/sh
+# deploy - Installs the remote repo access scripts to the user's private bin.
+
+install -t ~/bin/ nrr frr frrd
