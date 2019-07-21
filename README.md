@@ -1,4 +1,4 @@
-# nrr-frr - *client scripts for newrepo/findrepo*
+# nrr-frr - client scripts for newrepo/findrepo
 
 `nrr.cmd`, `frr.cmd`, and `frrd.cmd` are Windows utilities. They run `newrepo`
 and `findrepo` on a server.
