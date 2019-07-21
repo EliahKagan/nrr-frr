@@ -4,7 +4,7 @@ rem   Utility to look up an existing remote repo with copious debugging output.
 rem
 rem   This file is part of nrr-frr, client scripts for newrepo/findrepo.
 rem
-rem   Written in 2019 by Eliah Kagan <degeneracypressure@gmail.com>.
+rem   Written in 2018, 2019 by Eliah Kagan <degeneracypressure@gmail.com>.
 rem
 rem   To the extent possible under law, the author(s) have dedicated all
 rem   copyright and related and neighboring rights to this software to the
