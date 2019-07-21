@@ -16,7 +16,7 @@ of the server you want the scripts to run `newrepo` and `findrepo` on.
 
     This shouldn't be a full URL, just a hostanme or IP address. For example:
 
-    ```
+    ```none
     www.example.com
     ```
 
