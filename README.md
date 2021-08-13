@@ -12,6 +12,7 @@ this software. If not, see
 
 The `nrr`, `frr`, and `frrd` commands run on a client machine. They connect to
 a server, where they run `newrepo` (`nrr`) or `findrepo` (`frr` and `frrd`).
+See [newrepo-findrepo](https://github.com/EliahKagan/newrepo-findrepo).
 
 The files `nrr`, `frr`, and `frrd` provide those commands for Unix-like
 environments, while `nrr.cmd`, `frr.cmd`, and `frrd.cmd` provide them on
